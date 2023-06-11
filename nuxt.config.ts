@@ -16,7 +16,8 @@ export default defineNuxtConfig({
   modules: ["@pinia/nuxt"],
   runtimeConfig: {
     public: {
-      baseUrl: process.env.BASE_URL || "",
+      GPT_API_KEY: process.env.GPT_API_KEY || "",
+      GPT_API_URL: process.env.GPT_API_URL || "",
     },
   },
   devtools: { enabled: true }

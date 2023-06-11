@@ -9,11 +9,18 @@
         append-inner-icon="mdi-arrow-right"
         clearable
         clear-icon="mdi-close-circle"
-        @click:append-inner="chat"
+        @click:append-inner="chatStore.chat"
         @click:clear="chatStore.clear"
+        @keydown.enter.exact.prevent="chatStore.chat"
         @keydown.enter.shift.prevent="appendNewLine"
         hide-details
       ></v-textarea>
+      <v-btn @click="chatStore.stop">
+        멈춤 버튼
+      </v-btn>
+      <v-card>
+        {{  chatStore.result }}
+      </v-card>
     </v-container>
   </div>
 </template>
