@@ -18,6 +18,7 @@ export default defineNuxtConfig({
     public: {
       GPT_API_KEY: process.env.GPT_API_KEY || "",
       GPT_API_URL: process.env.GPT_API_URL || "",
+      URL: process.env.URL || "",
     },
   },
   devtools: { enabled: true }

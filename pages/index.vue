@@ -9,14 +9,14 @@
         append-inner-icon="mdi-arrow-right"
         clearable
         clear-icon="mdi-close-circle"
-        @click:append-inner="chatStore.chat"
+        @click:append-inner="chat"
         @click:clear="chatStore.clear"
-        @keydown.enter.exact.prevent="chatStore.chat"
+        @keydown.enter.exact.prevent="chat"
         @keydown.enter.shift.prevent="appendNewLine"
         hide-details
       ></v-textarea>
-      <v-btn @click="chatStore.stop">
-        멈춤 버튼
+      <v-btn @click="chatStore.close">
+        종료
       </v-btn>
       <v-card>
         {{  chatStore.result }}
@@ -37,6 +37,11 @@ const appendNewLine = (event: any) => {
     chatStore.query += "\n";
   }
 };
+
+const chat = async () => {
+  await chatStore.chat();
+}
+
 </script>
 
 <style scoped></style>
